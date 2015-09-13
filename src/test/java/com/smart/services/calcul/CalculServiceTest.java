@@ -38,12 +38,4 @@ public class CalculServiceTest extends BaseServiceTest
 
     }
 
-    public void testScanner()
-    {
-        System.out.println("This is my scanner : ");
-        Scanner scanner = new Scanner(System.in);
-        int nb = scanner.nextInt();
-
-        System.out.println("Number is : "+ nb);
-    }
 }

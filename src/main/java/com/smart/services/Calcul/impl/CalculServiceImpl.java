@@ -57,18 +57,18 @@ public class CalculServiceImpl implements CalculService
 
         for(Frame frame : frameFactory.getFrameMap().values())
         {
+            total += frame.getFirst();
+
             if(frame.getFirst() == 15)
             {
-                total += frame.getFirst();
-
                 try
                 {
-                    Frame next = frameFactory.getFrameMap().get(frame.getIndex());
+                    Frame next = frameFactory.getFrameMap().get(frame.getIndex()+1);
                     total += next.getFirst();
 
                     try
                     {
-                        Frame nextOfnext = frameFactory.getFrameMap().get(frame.getIndex()+1);
+                        Frame nextOfnext = frameFactory.getFrameMap().get(frame.getIndex()+2);
 
                         if(next.getFirst() == 15)
                         {
@@ -76,7 +76,7 @@ public class CalculServiceImpl implements CalculService
 
                             try
                             {
-                                Frame nextOfnextOfnext = frameFactory.getFrameMap().get(frame.getIndex()+2);
+                                Frame nextOfnextOfnext = frameFactory.getFrameMap().get(frame.getIndex()+3);
 
                                 if (nextOfnext.getFirst() == 15)
                                 {
@@ -122,13 +122,39 @@ public class CalculServiceImpl implements CalculService
             }
             else
             {
-                total += frame.getFirst();
                 total += frame.getSecond();
                 total += frame.getThird();
 
                 if (frame.getSecond() == 15 || frame.getThird() == 15)
                 {
                     total += frame.getFourth();
+                }
+            }
+
+            if (frame.getIndex() != 1)
+            {
+                Frame prev = frameFactory.getFrameMap().get(frame.getIndex()-1);
+                int totalFrame = getScoreFrom(prev);
+                if(prev.getFirst() != 15 && totalFrame == 15)
+                {
+                    if (frame.getIndex() != 5)
+                    {
+                        total += frameFactory.getFrameMap().get(frame.getIndex()).getFirst();
+
+                        if (frameFactory.getFrameMap().get(frame.getIndex()).getFirst() == 15)
+                        {
+                            total += frameFactory.getFrameMap().get(frame.getIndex()+1).getFirst();
+                        }
+                        else
+                        {
+                            total += frameFactory.getFrameMap().get(frame.getIndex()).getSecond();
+                        }
+                    }
+                    else
+                    {
+                        total += frame.getSecond();
+                        total += frame.getThird();
+                    }
                 }
             }
 

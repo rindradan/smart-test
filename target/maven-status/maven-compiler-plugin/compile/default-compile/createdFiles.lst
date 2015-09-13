@@ -1,4 +1,5 @@
 com\smart\model\Frame.class
+com\smart\ui\Main.class
 com\smart\services\calcul\CalculService.class
 com\smart\model\Throw.class
 com\smart\services\frame\impl\FrameFactoryImpl.class
