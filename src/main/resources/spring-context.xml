@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+       default-init-method="initialize"
+       default-destroy-method="shutdown">
+
+    <bean id="calculService" class="com.smart.services.calcul.impl.CalculServiceImpl">
+    </bean>
+
+    <bean id="frameFactory" class="com.smart.services.frame.impl.FrameFactoryImpl">
+        <property name="frameMap">
+            <map>
+                <entry key="1" value-ref="frame1" />
+                <entry key="2" value-ref="frame2" />
+                <entry key="3" value-ref="frame3" />
+                <entry key="4" value-ref="frame4" />
+                <entry key="5" value-ref="frame5" />
+            </map>
+        </property>
+    </bean>
+
+    <bean id="frame1" class="com.smart.model.Frame">
+        <constructor-arg value="1"/>
+    </bean>
+
+    <bean id="frame2" class="com.smart.model.Frame">
+        <constructor-arg value="2"/>
+    </bean>
+
+    <bean id="frame3" class="com.smart.model.Frame">
+        <constructor-arg value="3"/>
+    </bean>
+
+    <bean id="frame4" class="com.smart.model.Frame">
+        <constructor-arg value="4"/>
+    </bean>
+
+    <bean id="frame5" class="com.smart.model.Frame">
+        <constructor-arg value="5"/>
+    </bean>
+
+</beans>

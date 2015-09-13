@@ -1,0 +1,6 @@
+com\smart\model\Frame.class
+com\smart\services\calcul\CalculService.class
+com\smart\model\Throw.class
+com\smart\services\frame\impl\FrameFactoryImpl.class
+com\smart\services\frame\FrameFactory.class
+com\smart\services\calcul\impl\CalculServiceImpl.class
