@@ -1,2 +1,3 @@
 com\smart\services\BaseServiceTest.class
+com\smart\services\count\CountServiceTest.class
 com\smart\services\calcul\CalculServiceTest.class

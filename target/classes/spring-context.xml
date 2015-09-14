@@ -8,6 +8,10 @@
     <bean id="calculService" class="com.smart.services.calcul.impl.CalculServiceImpl">
     </bean>
 
+    <bean id="countService" class="com.smart.services.count.impl.CountServiceImpl">
+        <property name="frameFactory" ref="frameFactory"></property>
+    </bean>
+
     <bean id="frameFactory" class="com.smart.services.frame.impl.FrameFactoryImpl">
         <property name="frameMap">
             <map>
